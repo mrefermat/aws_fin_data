@@ -3,6 +3,10 @@ import seaborn as sns
 import boto3
 from botocore.exceptions import ClientError
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 from mail import Email
 token='QWe8iSbyAFzRuod2aroM'
 

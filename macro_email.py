@@ -24,6 +24,6 @@ data_pct=data_index.pct_change()
 
 data_pct['2018':].cumsum().ffill().plot(colormap='brg').get_figure().savefig('YTD.png')
 
-e=Email(to='mark.refermat@gmail.com',subject='Macro YTD Email')
+e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Macro YTD Email')
 e.add_attachment('YTD.png')
 e.send()

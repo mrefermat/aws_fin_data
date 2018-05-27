@@ -21,6 +21,7 @@ for i in indices.keys():
 data_pct=data_index.pct_change()
 
 ax1=data_pct['2018':].cumsum().ffill().plot(colormap='jet')
+ax1.set_xlabel("")
 ax1.get_figure().savefig('socgen.png')
 plt.show()
 plt.gcf().clear()
@@ -29,9 +30,9 @@ df = pd.DataFrame()
 df['CTA']=data_index.CTA
 df['SP500']=quandl.get('CHRIS/CME_SP1',authtoken=token).Last
 df=df.dropna().pct_change()
-ax2=pd.ewmcorr(df.CTA,df['SP500'],20)['2018':]
-ax2.plot(colormap='jet',title='Rolling Correlation').get_figure().savefig('socgen_corr.png')
-
+ax2=pd.ewmcorr(df.CTA,df['SP500'],20)['2018':].plot(colormap='jet',title='Rolling Correlation')
+ax2.set_xlabel("")
+ax2.get_figure().savefig('socgen_corr.png')
 
 e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Soc Gen Indices')
 e.add_attachments(['socgen.png','socgen_corr.png'])

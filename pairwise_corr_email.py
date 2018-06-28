@@ -1,7 +1,7 @@
 import quandl
 import seaborn as sns
 import pandas as pd
-import lab
+from lab import calc_ts_pairwise_correlation
 import matplotlib.pyplot as plt
 plt.switch_backend('agg')
 from mail import Email

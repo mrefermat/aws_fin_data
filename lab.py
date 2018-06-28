@@ -1,4 +1,4 @@
-
+import pandas as pd
 
 # Calculate absolute value pairwise correlation for just a non-timeseries correlation matrix
 def calc_pairwise_correlation(corr_matrix):
@@ -7,9 +7,9 @@ def calc_pairwise_correlation(corr_matrix):
 
 # Calculate timeseries of pairwise correlation using days look back accros as many numbers as needed
 def calc_ts_pairwise_correlation(data_pct,days=250):
-	corrts=pd.ewmcorr(data.dropna(),days,min_periods=days)
+	corrts=pd.ewmcorr(data_pct.dropna(),days,min_periods=days)
 	s = pd.Series()
-	for i in data.dropna().index:
+	for i in data_pct.dropna().index:
 		s[i]=calc_pairwise_correlation(corrts.ix[i])
 	return s
 

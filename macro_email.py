@@ -11,7 +11,21 @@ mkts={'SP 500':'CHRIS/CME_SP1',
       'US 10Y':'CHRIS/CME_TY1',
       'Crude Oil':'CHRIS/CME_CL1',
       'Eurostoxx 50':'CHRIS/EUREX_FESX1',
-      'Dollar Index':'CHRIS/ICE_DX1'
+      'Dollar Index':'CHRIS/ICE_DX1',
+      #'US 3M T-bills':'FRED/DTB3',
+      #'Fed Funds Effective Rate':'FRED/DFF',
+      'US Investment Grade':'COM/CDXNAIG',
+      'US High Yield':'COM/CDXNAHY',
+      #'US 20 Year Treasury':'FRED/DGS20',
+      #'TED Spread':'FRED/TEDRATE',
+      'Wheat':'CHRIS/CME_W7',
+      'Corn':'CHRIS/CME_C1',
+      #'Dax':'CHRIS/EUREX_FDAX1',
+      #'FTSE100':'CHRIS/LIFFE_Z1',
+      #'Eurodollar':'CHRIS/CME_ED1',
+      'Euro':'CHRIS/CME_EC1',
+      'GBP':'CHRIS/CME_BP1',
+      'Gold':'CHRIS/CME_EC1'
       }
 
 data_index=pd.DataFrame()

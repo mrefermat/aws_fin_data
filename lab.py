@@ -14,4 +14,3 @@ def calc_ts_pairwise_correlation(data_pct,days=250):
 		x=x[x.count()!=0].T[x.count()!=0]
 		s[i]=calc_pairwise_correlation(x)
 	return s
-

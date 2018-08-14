@@ -20,7 +20,7 @@ for i in indices.keys():
 
 data_pct=data_index.pct_change()
 
-ax1=data_pct['2018':].cumsum().ffill().plot(colormap='jet')
+ax1=data_pct['2017':].cumsum().ffill().plot(colormap='jet')
 ax1.set_xlabel("")
 ax1.get_figure().savefig('socgen.png')
 plt.show()
@@ -30,7 +30,7 @@ df = pd.DataFrame()
 df['CTA']=data_index.CTA
 df['SP500']=quandl.get('CHRIS/CME_SP1',authtoken=token).Last
 df=df.dropna().pct_change()
-ax2=pd.ewmcorr(df.CTA,df['SP500'],20)['2018':].plot(colormap='jet',title='20 Day Rolling Correlation: CTA index to S&P 500')
+ax2=pd.ewmcorr(df.CTA,df['SP500'],20)['2017':].plot(colormap='jet',title='20 Day Rolling Correlation: CTA index to S&P 500')
 ax2.set_xlabel("")
 ax2.get_figure().savefig('socgen_corr.png')
 

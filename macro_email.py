@@ -18,7 +18,7 @@ mkts={'SP 500':'CHRIS/CME_SP1',
       #'US High Yield':'COM/CDXNAHY',
       #'US 20 Year Treasury':'FRED/DGS20',
       #'TED Spread':'FRED/TEDRATE',
-      'Wheat':'CHRIS/CME_W7',
+      #'Wheat':'CHRIS/CME_W7',
       #'Corn':'CHRIS/CME_C1',
       #'Dax':'CHRIS/EUREX_FDAX1',
       #'FTSE100':'CHRIS/LIFFE_Z1',
@@ -48,7 +48,7 @@ for m in mkts.keys():
 						print(m)
 data_pct=data_index.pct_change()
 
-data_pct['2017':].cumsum().ffill().plot(colormap='brg').get_figure().savefig('YTD.png')
+data_pct['2017#':].cumsum().ffill().plot(colormap='brg').get_figure().savefig('YTD.png')
 
 e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Macro YTD Email')
 e.add_attachment('YTD.png')

@@ -8,7 +8,7 @@ from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.sectorperformance import SectorPerformances
 key ='EXATBX3CPYNC2QAM'
 sns.set_context("poster")
-sns.set(font_scale=2)
+sns.set(font_scale=1)
 
 def get_stock_adj_price(ticker):
 	ts = TimeSeries(key=key, output_format='pandas')
@@ -17,7 +17,7 @@ def get_stock_adj_price(ticker):
 	return data['5. adjusted close']
 
 df=pd.DataFrame()
-df['Min Vol ETF']=get_stock_adj_price('USMV')
+df['Min Vol']=get_stock_adj_price('USMV')
 df["Momentum"]=get_stock_adj_price('MTUM')
 df['Quality']=get_stock_adj_price('QUAL')
 df['Value']=get_stock_adj_price('FNDX')

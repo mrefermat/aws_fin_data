@@ -8,7 +8,7 @@ from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.sectorperformance import SectorPerformances
 key ='EXATBX3CPYNC2QAM'
 sns.set_context("poster")
-sns.set(font_scale=3)
+sns.set(font_scale=2)
 
 def get_stock_adj_price(ticker):
 	ts = TimeSeries(key=key, output_format='pandas')

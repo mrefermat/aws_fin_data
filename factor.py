@@ -29,7 +29,7 @@ sp=get_stock_adj_price('VOO')
 rets=df.dropna().pct_change()
 hedged_factor=rets.subtract(sp.pct_change(),axis=0)
 
-hedged_factor.dropna()['2017':].cumsum().plot(title='Hedge US factor ETF Performance)').get_figure().savefig('factor.png',bbox_inches='tight')
+hedged_factor.dropna()['2017':].cumsum().plot(title='Hedged US factor ETF Performance)').get_figure().savefig('factor.png',bbox_inches='tight')
 
 e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Factor Performance')
 e.add_attachment('factor.png')

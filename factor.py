@@ -17,6 +17,7 @@ def get_stock_adj_price(ticker):
 	return data['5. adjusted close']
 
 df=pd.DataFrame()
+time.sleep(61)
 df['Min Vol']=get_stock_adj_price('USMV')
 df["Momentum"]=get_stock_adj_price('MTUM')
 df['Quality']=get_stock_adj_price('QUAL')

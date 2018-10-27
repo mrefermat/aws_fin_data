@@ -9,3 +9,5 @@ sleep 15
 /home/ec2-user/anaconda3/bin/python /home/ec2-user/aws_fin_data/sector_data.py &
 sleep 15
 /home/ec2-user/anaconda3/bin/python /home/ec2-user/aws_fin_data/factor.py &
+sleep 15
+/home/ec2-user/anaconda3/bin/python /home/ec2-user/aws_fin_data/PCA_vol_explained.py &

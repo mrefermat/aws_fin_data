@@ -42,7 +42,7 @@ for i in range(window+1,number):
     pca.fit(data[i-window:i])
     results[data.iloc[i].name]=pd.Series(pca.explained_variance_)**.5
 
-results.T['2017':].plot(kind='area',colormap='magma',title='Vol Explained').get_figure().savefig('vol_explained.png')
+results.T['2018':].plot(kind='area',colormap='magma',title='Vol Explained').get_figure().savefig('vol_explained.png')
 
 e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Volatility explained by compoents')
 e.add_attachment('vol_explained.png')

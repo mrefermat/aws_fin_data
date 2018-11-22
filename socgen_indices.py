@@ -36,6 +36,6 @@ ax2=pd.ewmcorr(df.CTA,df['SP500'],20)['2018':].plot(colormap='jet',title='20 Day
 ax2.set_xlabel("")
 ax2.get_figure().savefig('socgen_corr.png')
 
-e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Soc Gen Indices')
+e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Soc Gen Indices')
 e.add_attachments(['socgen.png','socgen_corr.png'])
 e.send()

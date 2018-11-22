@@ -36,6 +36,6 @@ data_pct=data_index.pct_change()
 s=calc_ts_pairwise_correlation(data_pct)
 s['2000':].plot(colormap='jet').get_figure().savefig('pairwise.png')
 
-e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Pairwise Correlation')
+e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Pairwise Correlation')
 e.add_attachment('pairwise.png')
 e.send()

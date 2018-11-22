@@ -44,6 +44,6 @@ for i in range(window+1,number):
 
 results.T['2018':].plot(kind='area',colormap='magma',title='Vol Explained').get_figure().savefig('vol_explained.png')
 
-e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Volatility explained by compoents')
+e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Volatility explained by compoents')
 e.add_attachment('vol_explained.png')
 e.send()

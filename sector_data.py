@@ -20,6 +20,6 @@ def get_sector_data():
 
 get_sector_data().plot(kind='bar',colormap='jet',title='Performance (Long term Annualized)').get_figure().savefig('sector.png',bbox_inches='tight')
 
-e=Email(to='mark.refermat@gmail.com',subject='Morning Update: Sector Performance')
+e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Sector Performance')
 e.add_attachment('sector.png')
 e.send()

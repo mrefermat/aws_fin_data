@@ -44,9 +44,10 @@ class Email(object):
         connection = boto3.client('ses',region_name="us-east-1")
         self.msg['Subject'] = self.subject
         self.msg['From'] = from_addr
-        self.msg['To'] = self.to
+        #self.msg['To'] = self.to
+        self.msg['To'] = ','.join(self.to)
 
         return connection.send_raw_email(RawMessage={'Data': self.msg.as_string()},
                                          Source=from_addr,
-                                         Destinations=[self.to])
+                                         Destinations=self.to)
 

@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 plt.switch_backend('agg')
 from mail import Email
 token='QWe8iSbyAFzRuod2aroM'
+sns.set_context("poster")
 
 # Need to add many more markets
 mkts={'SP 500':'CHRIS/CME_SP1',

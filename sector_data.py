@@ -6,6 +6,7 @@ from mail import Email
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.sectorperformance import SectorPerformances
 key ='B22889019-EABCFEE1'
+sns.set_context("poster")
 
 def get_sector_data():
       sp=SectorPerformances (key=key, output_format='pandas')

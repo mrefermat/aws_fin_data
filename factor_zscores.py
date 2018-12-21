@@ -29,6 +29,17 @@ mkts={'SP 500':'CHRIS/CME_SP1',
       'Gold':'CHRIS/CME_EC1'
       }
 
+
+
+factor_map= {
+        'Risk on':['SP 500','DAX'],
+        'Quantitative Easing':['Gold','German Bund','US 10Y'],
+        #'Emerging Markets':['Copper','MXN','BRL','Ibovespa','Taiwan (SIMEX)'],
+        'EU':['DAX','FTSE100','Euro'],
+        'Energies':['Crude Oil'],
+        #'Industrials':['Copper','Rotterdam Coal','Crude','Shanghai  Rebar']
+    }
+
 data_index=pd.DataFrame()
 for m in mkts.keys():
     try:
@@ -49,13 +60,18 @@ for m in mkts.keys():
                 		print(m)
 data_pct=data_index.pct_change()  
 
-mu=pd.ewma(data_pct,260)
-sd=pd.ewmstd(data_pct,260)
-zscores=(data_pct-mu)/sd
+factors=pd.DataFrame()
+for f in factor_map.keys():
+    factors[f]=data_pct[factor_map[f]].mean(axis=1)
+
+
+mu=pd.ewma(factors,260)
+sd=pd.ewmstd(factors,260)
+zscores=(factors-mu)/sd
 last=zscores.iloc[-2].dropna().sort_values()
 last.plot(kind='barh',colormap='jet',ylim=[-3,3]).get_figure().savefig('zscore.png',bbox_inches='tight' )
 
 
-e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Macro Dashboard')
+e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Factor Dashboard')
 e.add_attachment('zscore.png')
 e.send()

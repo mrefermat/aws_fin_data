@@ -8,6 +8,10 @@ token='QWe8iSbyAFzRuod2aroM'
 sns.set_context("poster")
 sns.set(font_scale=1)
 
+to_ad=['Rob.DAngelo@gam.com','mark.refermat@gam.com' ,
+        'fraser.brannan@cantabcapital.com','Rosa.Wunner@cantabcapital.com',
+       'andrew.pirrie@cantabcapital.com','Monika.Mitchell@cantabcapital.com','mrefermat@hotmail.com']
+
 web_root='https://cib.societegenerale.com/fileadmin/indices_feeds/'
 indices={'CTA':'CTA_Historical.xls',
          'CTA Mutual Funds':'CTAM_Historical.xls',
@@ -36,6 +40,6 @@ ax2=pd.ewmcorr(df.CTA,df['SP500'],20)['2018':].plot(colormap='jet',title='20 Day
 ax2.set_xlabel("")
 ax2.get_figure().savefig('socgen_corr.png')
 
-e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Soc Gen Indices')
+e=Email(to=to_ad,subject='Morning Update: Soc Gen Indices')
 e.add_attachments(['socgen.png','socgen_corr.png'])
 e.send()

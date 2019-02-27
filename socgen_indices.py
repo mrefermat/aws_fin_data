@@ -8,9 +8,7 @@ token='QWe8iSbyAFzRuod2aroM'
 sns.set_context("poster")
 sns.set(font_scale=1)
 
-to_ad=['Rob.DAngelo@gam.com','mark.refermat@gam.com' ,
-        'fraser.brannan@cantabcapital.com','Rosa.Wunner@cantabcapital.com',
-       'andrew.pirrie@cantabcapital.com','Monika.Mitchell@cantabcapital.com','mrefermat@hotmail.com']
+to_ad=['mark.refermat@gam.com' ,'mrefermat@hotmail.com']
 
 web_root='https://cib.societegenerale.com/fileadmin/indices_feeds/'
 indices={'CTA':'CTA_Historical.xls',

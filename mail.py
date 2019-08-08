@@ -7,7 +7,7 @@ import boto3
 
 class Email(object):
 
-    def __init__(self, to, subject):
+    def __init__(self, to=['mrefermat@hotmail.com'], subject):
         self.to = to
         self.subject = subject
         self.text = None

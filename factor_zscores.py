@@ -72,6 +72,6 @@ last=zscores.iloc[-2].dropna().sort_values()
 last.plot(kind='barh',colormap='jet',ylim=[-3,3]).get_figure().savefig('zscore.png',bbox_inches='tight' )
 
 
-e=Email(to=['mark.refermat@gmail.com','mark.refermat@gam.com'],subject='Morning Update: Factor Dashboard')
+e=Email(subject='Morning Update: Factor Dashboard')
 e.add_attachment('zscore.png')
 e.send()

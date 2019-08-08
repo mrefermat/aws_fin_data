@@ -8,9 +8,7 @@ token='QWe8iSbyAFzRuod2aroM'
 sns.set_context("poster")
 sns.set(font_scale=1)
 
-to_ad=['mark.refermat@gam.com' ,'mrefermat@hotmail.com']
-
-web_root='https://cib.societegenerale.com/fileadmin/indices_feeds/'
+web_root='https://wholesale.banking.societegenerale.com/fileadmin/indices_feeds/'
 indices={'CTA':'CTA_Historical.xls',
          'CTA Mutual Funds':'CTAM_Historical.xls',
          'Trend Index':'Trend_Index_Historical.xls',
@@ -19,7 +17,7 @@ indices={'CTA':'CTA_Historical.xls',
         }
 data_index=pd.DataFrame()
 for i in indices.keys():
-    file='https://cib.societegenerale.com/fileadmin/indices_feeds/'+indices[i]
+    file='https://wholesale.banking.societegenerale.com/fileadmin/indices_feeds/'+indices[i]
     data_index[i]=pd.read_csv(file,sep='\t',index_col=0,parse_dates=[0],usecols=[0,1]).ix[:,0]
 
 data_pct=data_index.pct_change()
@@ -38,6 +36,6 @@ ax2=pd.ewmcorr(df.CTA,df['SP500'],20)['2018':].plot(colormap='jet',title='20 Day
 ax2.set_xlabel("")
 ax2.get_figure().savefig('socgen_corr.png')
 
-e=Email(to=to_ad,subject='Morning Update: Soc Gen Indices')
+e=Email(subject='Morning Update: Soc Gen Indices')
 e.add_attachments(['socgen.png','socgen_corr.png'])
 e.send()

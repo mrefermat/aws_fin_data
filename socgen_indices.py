@@ -22,7 +22,7 @@ for i in indices.keys():
 
 data_pct=data_index.pct_change()
 
-ax1=data_pct['2018':].cumsum().ffill().plot(colormap='jet')
+ax1=data_pct['2019':].cumsum().ffill().plot(colormap='jet')
 ax1.set_xlabel("")
 ax1.get_figure().savefig('socgen.png')
 plt.show()

@@ -15,7 +15,8 @@ class Email(object):
         self.msg = MIMEMultipart()
         
     def add_text(self, text):
-        self.text = text
+        msgText = MIMEText(text,'html')
+        self.msg.attach(msgText)
 
     def add_attachment(self, file_name):
         msgText = MIMEText('<br><img src="cid:%s"><br>' %  file_name, 'html')  

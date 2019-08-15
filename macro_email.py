@@ -49,7 +49,7 @@ for m in mkts.keys():
 						print(m)
 data_pct=data_index.pct_change()
 
-data_pct['2018':].cumsum().ffill().plot(colormap='brg').get_figure().savefig('YTD.png')
+data_pct['2019':].cumsum().ffill().plot(colormap='brg').get_figure().savefig('YTD.png')
 
 e=Email(subject='Morning Update: Macro YTD Email')
 e.add_attachment('YTD.png')

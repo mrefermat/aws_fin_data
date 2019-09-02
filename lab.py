@@ -1,4 +1,13 @@
 import pandas as pd
+import quandl 
+token='QWe8iSbyAFzRuod2aroM'
+
+def get_sp_future():
+    return quandl.get("CHRIS/CME_SP1", authtoken=token).resample(rule='d').last().Last.dropna()
+
+# Simple Sharpe ratio calculation
+def calc_Sharpe(pnl,N=12):
+    return np.sqrt(N) * pnl.mean() / pnl.std()
 
 # Calculate absolute value pairwise correlation for just a non-timeseries correlation matrix
 def calc_pairwise_correlation(corr_matrix):

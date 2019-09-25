@@ -19,6 +19,6 @@ for l in soup.find_all(sho='62'):
 for l in soup.find_all(sho='43'): 
     msg=msg+ '<p><a href="' +  l.find('button').get('mp3') +  '">Something Wonderful</a>\n'
 
-e=Email(subject='Weekly Update: Music Email')
+e=Email(subject='Weekly Update: Music Email',to=['mark.refermat@gmail.com'])
 e.add_text(msg)
 e.send()

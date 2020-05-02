@@ -10,6 +10,9 @@ msg=''
 for l in soup.find_all(sho='83'): 
     msg=msg+ '<p><a href="' +  l.find('button').get('mp3') +  '">Diaspora</a>'
 
+for l in soup.find_all(sho='53'): 
+    msg=msg+ '<p><a href="' +  l.find('button').get('mp3') +  '">Global Revolution</a>'
+
 for l in soup.find_all(sho='21'): 
     msg=msg+ '<p><a href="' +  l.find('button').get('mp3') +  '">Entertainment</a>\n'
 
